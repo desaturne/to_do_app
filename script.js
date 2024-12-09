@@ -99,11 +99,21 @@ function renderTasks(filter = "pending") {
 }
 
 // Mark task as completed
-function markCompleted(index) {
-  todos[index].status = "completed";
+function markCompleted(filteredIndex) {
+  // Map the filtered index to the actual index in the todos array
+  const activeTab = document.querySelector(".tab.active").dataset.tab;
+  const filteredTodos = activeTab === "completed"
+    ? todos.filter(t => t.status === "completed")
+    : todos.filter(t => t.status === "pending");
+
+  const actualIndex = todos.indexOf(filteredTodos[filteredIndex]);
+
+  todos[actualIndex].status = "completed";
   localStorage.setItem("Todos", JSON.stringify(todos));
-  renderTasks(document.querySelector(".tab.active").dataset.tab);
+
+  renderTasks(activeTab);
 }
+
 
 // Delete a task
 function deleteTask(index) {
