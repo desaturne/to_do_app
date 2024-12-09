@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header>Zen Do</header>
+    <div class="tabs">
+      <button class="tab active" data-tab="pending">Pending</button>
+      <button class="tab" data-tab="completed">Completed</button>
+      <button class="tab" data-tab="all">All Tasks</button>
+    </div>
+    <div class="inputField">
+      <input type="text" placeholder="Add your new to do">
+      <button><i class="fas fa-plus"></i></button>
+    </div>
+    <ul class="todoList">
+
+      
+    </ul>
+    <div class="footer">
+      <span>You have <span class="pendingTasks"></span> pending tasks</span>
+      <button>Clear All</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
